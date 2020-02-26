@@ -1,0 +1,25 @@
+<div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+
+  <% if @posts.present? %>
+      <div class="row">
+      <% @posts.each do |post| %>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-header">
+              <h3><%= post.title %></h3>
+            </div>
+            <div class="card-body">
+              <p><%= post.body %></p>
+              <%= link_to "read more", post_path(post), :class => 'btn btn-lg btn-block btn-primary' %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+
+<% else %>
+  <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
+<% end %>
+

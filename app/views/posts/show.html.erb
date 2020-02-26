@@ -1,0 +1,17 @@
+<div class="container text-center">
+  <div class="card mb-4 shadow-sm">
+    <div class="card-title">
+      <h1><%= @post.title %></h1>
+    </div>
+    <div class="card-body">
+      <p><%= @post.body %></p>
+      <% if logged_in? %>
+        <%= link_to "Edit", edit_post_path(@post), :class => 'btn btn-sm btn-outline-secondary'%>
+        <%= link_to "Delete", post_path(@post), method: :delete, :class => 'btn btn-sm btn-outline-secondary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= render 'comments/comments' %>
+<%= render 'comments/form' %>

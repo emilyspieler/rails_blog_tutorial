@@ -1,0 +1,7 @@
+<div class="container">
+  <% @post.comments.each do |comment| %>
+    <hr>
+      <p><strong><%= comment.username %> <%= comment.body %> <%= link_to 'Delete', [comment.post, comment], method: :delete, :class => 'btn btn-sm btn-outline-secondary'%></strong></p>
+  <% end %>
+  <hr>
+</div>
